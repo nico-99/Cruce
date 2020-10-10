@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/catalogo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Catalogo</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <img src="/images/banner2.jpg" class="banner-img" alt="banner">
+            </div>
+        </header>
+        <section>
+            <nav>
+                <div>
+                    <p>Inicio / Juguetes / Funko Pop</p>
+                </div>
+                <div>
+                    <p>Filtrar</p>
+                </div>
+                <div>
+                    <p>Ordenar Por</p>
+                </div>
+            </nav>
+            <div class="products">
+                <% products.forEach(product => { %>
+                <div>
+                    <img src="/images/funko1.jpg">
+                    <h3>Funko</h3>
+                    <ul>
+                        <li><%= product.name %></li>
+                        <li style="opacity: 0.6;">6 cuotas sin interes!</li>
+                        <li style="font-weight: bold;">$ <%= product.price %> </li>
+                    </ul>
+                    <a class="cart-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                    <a id="detail" href="/list">Ver articulo</a>
+                </div>
+                <% }) %>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>
