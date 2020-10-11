@@ -21,23 +21,19 @@
         <section>
             <nav>
                 <div>
-                    Inicio / Juguetes / Funko Pop
+                    <p>Inicio / Juguetes / Funko Pop</p>
                 </div>
                 <div>
-                    <a href="/">Filtrar</a>
+                    <p>Filtrar</p>
                 </div>
                 <div>
-                        <select name="" id="">
-                            <option value="">Ordenar Por</option>
-                            <option value="">Menor Precio</option>
-                            <option value="">Mayor Precio</option>
-                        </select>
+                    <p>Ordenar Por</p>
                 </div>
             </nav>
             <div class="products">
-                <% products.forEach(product => { %>
+                <% lowFilterProducts.forEach(product => { %>
                 <div>
-                    <img src="/images/products/<%= product.image %>">
+                    <img src="/images/funko1.jpg">
                     <h3>Funko</h3>
                     <ul>
                         <li><%= product.name %></li>

@@ -26,6 +26,9 @@ router.get('/list', mainController.list);
 // ruta hacia el detalle de cada producto
 router.get('/detail/:id', mainController.detail);
 
+// ruta para productos de menor a mayor precio
+router.get('/low', mainController.filter)
+
 // ruta hacia el formulario de creacion
 router.get('/create', mainController.create);
 // ruta con el metodo que guarda la pelicula nueva

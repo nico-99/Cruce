@@ -6,6 +6,7 @@ const Sequelize = require('sequelize');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const DB = require('../database/models')
+const OP = DB.Sequelize.Op
 
 
 const mainController = {
@@ -18,7 +19,7 @@ const mainController = {
         }
     },
 
-    list: async(req, res) => {
+    list: async (req, res) => {
         try {
             const products = await DB.Product.findAll()
             res.render('index', { products })
@@ -27,7 +28,22 @@ const mainController = {
         }
     },
 
-    detail: async(req, res)=> {
+    filter: async (req, res) => {
+        try {
+            const lowFilterProducts = await DB.Product.findAll({
+                where: {
+                    price: [
+                        ['price','DESC']
+                    ]
+                }
+            })
+            res.render('lowFilter', {lowFilterProducts})
+        } catch (error) {
+            res.send(error)
+        }
+    },
+
+    detail: async (req, res) => {
         try {
             const product = await DB.Product.findByPk(req.params.id)
             res.render('detailProduct', { product: product })
@@ -44,10 +60,10 @@ const mainController = {
         try {
             const newProduct = {
                 ...req.body,
-                portada: req.files[0].filename,
+                image: req.files[0].filename,
             }
             await DB.Product.create(newProduct)
-            res.redirect('/')
+            res.redirect('/list')
         } catch (error) {
             res.send(error)
         }
@@ -84,7 +100,7 @@ const mainController = {
                 id: req.params.id
             }
         })
-        res.redirect('/')
+        res.redirect('/list')
     },
 }
 
