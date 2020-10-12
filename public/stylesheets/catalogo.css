@@ -11,7 +11,7 @@ body{
 .container {
   font-size: 16px;
   margin: auto;
-  width: 78%;
+  width: 80%;
   font-family: sans-serif;
   margin-bottom: 65px;
   margin-top: 10px;
@@ -43,13 +43,13 @@ nav a {
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   margin: 10px 0px;
-  width: 100%;
+  width: 80%;
   margin: auto;
 }
 
 .products img {
   width: 100%;
-  height: 470px;
+  height: 295px;
   }
 
 .products h3 {
