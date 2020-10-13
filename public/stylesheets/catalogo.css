@@ -8,6 +8,15 @@ body{
   font-family: sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #ff9d00;
+  border-radius: 5px;
+}
+
 .container {
   font-size: 16px;
   margin: auto;
