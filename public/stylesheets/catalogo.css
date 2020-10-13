@@ -124,12 +124,57 @@ nav a {
 }
 
 @media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   .products {
     grid-template-columns: 1fr 1fr;
+  }
+
+  nav {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    display: block;
+
+  }
+
+  nav div {
+    font-size: 25px;
+  }
+
+  nav div select {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
   }
 }
 
 @media(max-width: 600px) {
+
+  header {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  nav {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    display: block;
+    
+  }
+
+  nav div {
+    font-size: 25px;
+  }
+
+  nav div select {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+  }
+
   .products {
     grid-template-columns: 1fr;
   }
